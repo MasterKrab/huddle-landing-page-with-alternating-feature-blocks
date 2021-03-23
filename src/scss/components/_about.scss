@@ -1,0 +1,73 @@
+@use "abstracts/vars/colors" as c;
+
+.about{
+   text-align: center;
+   box-shadow: 0 0 10px rgba(#000, 0.1);
+   border-radius: 0.7rem;
+   padding: 2rem;
+
+   display: grid;
+   grid-template-columns: 1fr;
+   place-items: center;
+   gap: 1rem;
+   
+   @media screen and (min-width: 1000px){
+      grid-template-columns: minmax(300px, 700px) minmax(300px, 450px);
+      justify-content: space-between;
+      text-align: start;
+
+      &--conversations{
+         grid-template-columns: minmax(300px, 550px) minmax(300px, 550px);
+      }
+      
+      &__card{
+         max-width: 550px;
+
+         &--conversations{
+            order: 2;
+         }
+      }
+   }
+
+   &__figure{
+      margin: 1rem;
+
+      @media screen and (min-width: 1000px){
+         order: 1;
+
+         &--conversations{
+            max-width: 450px;
+         }
+      }
+   }
+
+   &__logo{
+      display: block;
+      width: 100%;
+   }
+
+   &__title{
+      color: c.$very-dark-cyan;
+      font-family: Poppins;
+      font-size: 1.2rem;
+
+      @media screen and (min-width: 1000px){
+         font-size: 1.8rem;
+      }
+   }
+
+   &__text{
+      margin-top: 0;
+      color: c.$grayish-blue;
+      font-size: 0.6rem;
+      line-height: 1.5;
+
+      @media screen and (min-width: 365px){
+         font-size: 0.9rem;
+      }
+
+      @media screen and (min-width: 1000px){
+         font-size: 1.1rem;
+      }
+   }
+}
